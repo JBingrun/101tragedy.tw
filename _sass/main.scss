@@ -1,63 +1,98 @@
-// Fonts preferences
-$sans-family: Roboto, sans-serif;
-$mono-family: Consolas, monospace;
-$base-font-size: 16px;
-$medium-font-size: $base-font-size * 0.938;
-$small-font-size: $base-font-size * 0.875;
-$base-line-height: 1.85;
+table {
+  @extend .table;
+  @extend .table-striped;
+}
 
-// Font weight
-// $light-weight: 300; // uncomment if necessary
-$normal-weight: 400;
-$bold-weight: 700;
-// $black-weight: 900; // uncomment if necessary
+blockquote {
+  @extend .blockquote;
+}
 
-//Light Colors
-$text-base-color: #434648;
-$text-link-blue: #003fff;
-$text-link-blue-active: #0036c7;
+img {
+  @extend .img-fluid;
+  margin-bottom: 1rem;
+}
 
-$black: #0d122b;
-$light: #ececec;
-$smoke: #d2c7c7;
-$gray: #6b7886;
-$white: #fff;
+.navbar {
+  margin-bottom: 2rem;
+  border-bottom: 0.125rem solid hsl(0, 0%, 30%);
+}
 
-// Dark Colors
-$dark-text-base-color: #c7bebe;
-$dark-text-link-blue: #ff5277;
-$dark-text-link-blue-active: #ff2957;
+.archive-year {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
 
-$dark-black: #131418;
-$dark-white: #eaeaea;
-$dark-light: #1b1d25;
-$dark-smoke: #4a4d56;
-$dark-gray: #767f87;
+.archive-date {
+  float: right;
+  margin-left: 1rem;
+}
 
-// Width of the content area
-$wide-size: 890px;
-$narrow-size: 720px;
+.archive-item {
+  margin-bottom: 0.5rem;
+}
 
-// Padding unit
-$spacing-full: 30px;
-$spacing-half: $spacing-full / 2;
+.footer-container {
+  text-align: center;
+}
 
-// State of devices
-$on-mobile: 768px;
-$on-tablet: 769px;
-$on-desktop: 1024px;
-$on-widescreen: 1152px;
+.footer-icons {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: 0.5rem;
+}
 
-@mixin media-query($device) {
-  @media screen and (max-width: $device) {
-    @content;
+.footer-icon-links {
+  text-decoration: none;
+  color: #212529;
+}
+
+.footer-icon-links:hover,
+.footer-icon-links:focus {
+  text-decoration: none;
+  color: #212529;
+}
+
+.archive-title {
+  color: #212529;
+}
+
+.highlight {
+  background-color: #272822;
+}
+
+pre.highlight {
+  padding: 1rem;
+}
+
+.dark-avatar {
+  display: none !important;
+}
+
+.light-avatar,
+.dark-avatar {
+  margin-right: 0.25rem !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  .footer-icon-links {
+    text-decoration: none;
+    color: #e1e1e1;
+  }
+
+  .footer-icon-links:hover,
+  .footer-icon-links:focus {
+    text-decoration: none;
+    color: #e1e1e1;
+  }
+
+  .archive-title {
+    color: #e1e1e1;
+  }
+
+  .light-avatar {
+    display: none !important;
+  }
+  .dark-avatar {
+    display: inline-block !important;
   }
 }
-
-@mixin relative-font-size($ratio) {
-  font-size: $base-font-size * $ratio;
-}
-
-// Import sass files
-@import "klise/fonts", "klise/base", "klise/layout", "klise/post",
-  "klise/miscellaneous", "klise/syntax", "klise/dark";
